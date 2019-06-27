@@ -27,7 +27,9 @@ The various scripts are:
 6. zipf's law: Finds and stores which words to use as zip words. The lim1 and lim2 parameter in the script can be adjusted to either 										 increase or decrease the no of zip words. The script makes 2 files- word_freq (stores the frequency of each word in the 									 ubuntu manpages'corpus) and zip_words (stores the extracted zip words).
 7. Calculate rel 3 work distribution: Extracting relations of type 3 in the knowledge graph maker can take a lot of time, because for this
                                       we have to compare every pair of entities out of n entities to see if they are related, which takes                                         n^2 comparisons. So this script partitions the interval [1, n] into numerous parts so that each part 																			 has to perform the same number of comparisons. The partitons can be used to multithread the code in a 																			 multicore machine. In the Knowledge Graph Maker, lim1 and lim2 for relation 3 extraction have to be																				assigned the endpoints of the partitions described just now.
-																		
+
+The scripts other than those described above are not necessary to the project and only used for debugging / error correction
+
 Execution Order:
 downloader -> Full Entity Extraction -> Merger -> zipf's law -> Calculate rel3 work distribution (optional) ->
 Knowledge Graph Maker -> Knowledge Graph Reader\
